@@ -1,12 +1,1 @@
-# Ignorar archivos sensibles
 .env
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-venv/
-.idea/
-.vscode/
-
-# Ignorar notebooks de Jupyter si no los quieres subir
-*.ipynb_checkpoints
