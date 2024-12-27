@@ -27,8 +27,8 @@ services:
       - "8501:8501"  # Exponer el puerto 8501 para acceder a la aplicación
     volumes:
       - ./app:/app  # Montar el directorio de la aplicación
-      - C:\Users\LENOVO\Desktop\Robotics\Curso Chatbot\Replica_chatbot\app\data\chroma_langchain_db:/app/data/chroma_langchain_db  # Montaje para la base de datos Chroma
-      - C:\Users\LENOVO\Desktop\Robotics\Curso Chatbot\Replica_chatbot\app\data\estados_de_cuenta:/app/data/estados_de_cuenta  # Montaje para los estados de cuenta
+      - .\app\data\chroma_langchain_db:/app/data/chroma_langchain_db  # Montaje para la base de datos Chroma
+      - .\app\data\estados_de_cuenta:/app/data/estados_de_cuenta  # Montaje para los estados de cuenta
 
 volumes:
   postgres_data:  # Definición del volumen persistente para PostgreSQL

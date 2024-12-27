@@ -22,7 +22,7 @@ embeddings = OpenAIEmbeddings(
     dimensions=768
 )
 
-vectorstore = Chroma(collection_name="corpus_tokens", embedding_function=embeddings, persist_directory = "C:/Users/LENOVO/Desktop/Robotics/Curso Chatbot/Replica_chatbot/app/data/chroma_langchain_db")
+vectorstore = Chroma(collection_name="corpus_tokens", embedding_function=embeddings, persist_directory = "./app/data/chroma_langchain_db")
 retriever = vectorstore.as_retriever()
 
 # Definir el prompt del sistema para el asistente

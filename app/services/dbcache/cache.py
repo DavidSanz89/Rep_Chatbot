@@ -4,7 +4,7 @@ from loguru import logger
 from chromadb.config import Settings
 
 # Inicializar el cliente de ChromaDB y crear o acceder a la colección 'dbcache'
-chroma_client = chromadb.Client(Settings(persist_directory="C:/Users/LENOVO/Desktop/Robotics/Curso Chatbot/Replica_chatbot/app/data/chroma_langchain_db/chroma_langchain_db"))
+chroma_client = chromadb.Client(Settings(persist_directory="./Replica_chatbot/app/data/chroma_langchain_db/chroma_langchain_db"))
 collection = chroma_client.get_or_create_collection(name="dbcache")
 
 def check_cache(question):

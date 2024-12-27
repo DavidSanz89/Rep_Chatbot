@@ -4,7 +4,6 @@ from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
 
-#os.environ["PANDASAI_API_KEY"] = "$2a$10$FNyWQWbD4BWGYYIAyaKZHu0Y3ybwzvshmhgZqIbKhoM57zdUYokXa"
 
 load_dotenv()
 
@@ -13,7 +12,7 @@ PANDASAI_API_KEY = os.getenv("PANDASAI_API_KEY")
 # Init PandasAI Smart Dataframe
 postgres_connector__accounts = PostgreSQLConnector(
     config={
-        "host": "localhost",
+        "host": "db",
         "port": 5432,
         "database": "data_bank",
         "username": "postgres",
@@ -34,8 +33,8 @@ try:
         return df_cuentas.chat(consulta)
 
 
-    response = get_query_database.invoke("Dame las transacciones del mes de junio 2017 de la cuenta 409000611074")
-    print(response)
+    #response = get_query_database.invoke("Dame las transacciones del mes de junio 2017 de la cuenta 409000611074")
+    #print(response)
 
 
 finally:

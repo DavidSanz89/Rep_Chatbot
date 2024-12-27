@@ -15,8 +15,6 @@ load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-#os.environ["OPENAI_API_KEY"] = "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"
-
 embeddings = OpenAIEmbeddings(
     model="text-embedding-3-small",
     dimensions=768
@@ -54,7 +52,7 @@ def summarize_and_add_metadata(pages, pdf_filename, folder):
     return splits   
 
 
-ruta_carpeta = "C:\\Users\\LENOVO\\Desktop\\Robotics\\Curso Chatbot\\Replica_chatbot\\app\\data\\Corpus"
+ruta_carpeta = ".\\app\\data\\Corpus"
 all_splits = []
 
 for archivo in os.listdir(ruta_carpeta):
@@ -72,7 +70,7 @@ vectorstore = Chroma.from_documents(
     collection_name="corpus_tokens", 
     documents=all_splits, 
     embedding=embeddings, 
-    persist_directory="C:/Users/LENOVO/Desktop/Robotics/Curso Chatbot/Replica_chatbot/app/data/chroma_langchain_db"
+    persist_directory="./app/data/chroma_langchain_db"
 )
 
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
